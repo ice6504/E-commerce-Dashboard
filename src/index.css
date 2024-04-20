@@ -1,0 +1,9 @@
+body {
+  font-family: "Kanit", sans-serif;
+  font-style: normal;
+  scroll-behavior: smooth;
+  transition: 0.3s;
+}
+
+@tailwind components;
+@tailwind utilities;
