@@ -38,9 +38,8 @@ function Home() {
       <div className="space-y-5 lg:space-y-8">
         <h1 className="text-3xl font-medium text-black">Overview</h1>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-8">
-          <div className="lg:col-span-2 bg-white rounded-3xl sm:hover:scale-105 duration-300 transition-all sm:hover:shadow-xl">
+          <div className="lg:col-span-2 bg-white rounded-3xl sm:hover:scale-105 duration-300 transition-all sm:hover:shadow-xl max-lg:h-[30vh]">
             <LineChart
-              height={450}
               series={[
                 { data: uData, label: monthName, area: true, showMark: false },
               ]}
@@ -48,6 +47,7 @@ function Home() {
               sx={{
                 [`& .${lineElementClasses.root}`]: {
                   display: "none",
+                
                 },
               }}
             />
