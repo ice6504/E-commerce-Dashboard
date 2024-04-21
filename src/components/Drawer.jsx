@@ -92,7 +92,6 @@ function Drawer(props) {
     setOpen(true);
   };
   const drawerClose = () => {
-    window.screen
     setOpen(false);
   };
 
@@ -140,7 +139,7 @@ function Drawer(props) {
               >
                 <NavLink to="/">
                   <ListItemIcon
-                    className={` justify-center text-2xl ${
+                    className={` justify-center items-center text-2xl ${
                       open ? "gap-4" : ""
                     }`}
                   >
@@ -162,7 +161,9 @@ function Drawer(props) {
               >
                 <NavLink to="/salesReport">
                   <ListItemIcon
-                    className={`justify-center text-2xl ${open ? "gap-4" : ""}`}
+                    className={`justify-center items-center text-2xl ${
+                      open ? "gap-4" : ""
+                    }`}
                   >
                     <i className="fa-solid fa-chart-line"></i>
                     <ListItemText
@@ -182,7 +183,9 @@ function Drawer(props) {
               >
                 <NavLink to="/inventory">
                   <ListItemIcon
-                    className={`justify-center text-2xl ${open ? "gap-4" : ""}`}
+                    className={`justify-center text-2xl items-center ${
+                      open ? "gap-4" : ""
+                    }`}
                   >
                     <i className="fa-solid fa-list-check"></i>
                     <ListItemText
@@ -202,7 +205,9 @@ function Drawer(props) {
               >
                 <NavLink to="/customer">
                   <ListItemIcon
-                    className={`justify-center text-2xl ${open ? "gap-4" : ""}`}
+                    className={`justify-center text-2xl items-center ${
+                      open ? "gap-4" : ""
+                    }`}
                   >
                     <i className="fa-solid fa-users"></i>
                     <ListItemText
@@ -223,7 +228,12 @@ function Drawer(props) {
           </Button>
         </div>
       </MiniDrawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <Box
+        className="bg-[#f4f5f6] min-h-screen"
+        color="brown"
+        component="main"
+        sx={{ flexGrow: 1, p: 3 }}
+      >
         <DrawerHeader />
         {children}
       </Box>
