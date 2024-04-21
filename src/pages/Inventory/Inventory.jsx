@@ -1,9 +1,9 @@
-
-
 function Inventory() {
   return (
-    <div>Inventory</div>
-  )
+    <>
+      <h1 className="text-3xl font-medium text-black">Inventory</h1>
+    </>
+  );
 }
 
-export default Inventory
+export default Inventory;

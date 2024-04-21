@@ -19,6 +19,8 @@ function Home() {
   ];
   let monthName = monthNames[now.getMonth()];
 
+  const totalSales = 25690;
+
   const data = [
     { Product: "A", Sale: 4000 },
     { Product: "B", Sale: 3000 },
@@ -31,8 +33,6 @@ function Home() {
 
   const sortedData = data.sort((a, b) => b.Sale - a.Sale);
 
-  const uData = [4000, 3000, 2000, 2780, 1890, 2390, 3490];
-  const xLabels = ["A", "B", "C", "D", "E", "F", "G"];
   return (
     <>
       <div className="space-y-5 lg:space-y-8">
@@ -40,28 +40,41 @@ function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-8">
           <div className="lg:col-span-2 bg-white rounded-3xl sm:hover:scale-105 duration-300 transition-all sm:hover:shadow-xl max-lg:h-[30vh]">
             <LineChart
-              series={[
-                { data: uData, label: monthName, area: true, showMark: false },
+              xAxis={[
+                {
+                  scaleType: "point",
+                  data: data.map((item) => item.Product),
+                  label: "Product",
+                },
               ]}
-              xAxis={[{ scaleType: "point", data: xLabels, label: "Product" }]}
+              series={[
+                {
+                  data: data.map((item) => item.Sale),
+                  label: monthName,
+                  area: true,
+                  showMark: false,
+                },
+              ]}
               sx={{
                 [`& .${lineElementClasses.root}`]: {
                   display: "none",
-                
                 },
               }}
             />
           </div>
           <div className="col-span-1 bg-white rounded-3xl grid text-black sm:hover:scale-105 duration-300 transition-all sm:hover:shadow-xl">
             <div className="py-5 lg:py-16 flex flex-col items-center">
-              <h3 className="text-xl sm:text-3xl font-bold text-center">
+              <h3 className="text-2xl sm:text-3xl font-bold text-center">
                 Top 5 Product Sales <br /> in {monthName}
               </h3>
-              <ol className="text-lg sm:text-3xl">
+              <ol className="text-lg sm:text-3xl lg:max-xl:list-none list-decimal">
                 {sortedData.slice(0, 5).map((product, index) => {
                   return (
                     <li key={index}>
-                      Product {product.Product} : {product.Sale}
+                      <span className="font-medium">
+                        Product {product.Product}
+                      </span>
+                      : {product.Sale}
                     </li>
                   );
                 })}
@@ -71,7 +84,8 @@ function Home() {
         </div>
         <div className="grid sm:grid-cols-3 gap-4 lg:gap-8 text-black">
           <Stat title="Total sales" percent={300} up={true}>
-            <sup>$</sup>25690
+            <sup>$</sup>
+            {totalSales.toLocaleString()}
           </Stat>
           <Stat title="New Customers" percent={20} up={true}>
             252
