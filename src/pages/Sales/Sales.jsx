@@ -5,19 +5,21 @@ const columns = [
   {
     field: "productName",
     headerName: "Product Name",
+    align:"center",
     width: 120,
   },
   {
     field: "quantity",
     headerName: "Quantity",
     type: "number",
+    align:"center",
     width: 80,
   },
   {
     field: "price",
     headerName: "Price",
     type: "number",
-    width: 100,
+    width: 70,
   },
 ];
 
