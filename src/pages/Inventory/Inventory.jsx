@@ -69,9 +69,9 @@ function Inventory() {
           />
         </div>
         <div className="flex gap-4">
-          <Button className="bg-green-400 w-20 font-semibold" variant="contained">Add</Button>
-          <Button className="bg-yellow-400 w-20 font-semibold" variant="contained">Edit</Button>
-          <Button className="bg-red-400 w-20 font-semibold" variant="contained">Delete</Button>
+          <Button className="bg-green-400 w-20 font-semibold rounded-full" variant="contained">Add</Button>
+          <Button className="bg-yellow-400 w-20 font-semibold rounded-full" variant="contained">Edit</Button>
+          <Button className="bg-red-400 w-20 font-semibold rounded-full" variant="contained">Delete</Button>
         </div>
       </div>
     </>
